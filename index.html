@@ -5,8 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="reset.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" href="./img/teams-favicon-removebg-preview.png" type="image/png">
+    <script src="https://kit.fontawesome.com/2d115c2cb3.js" crossorigin="anonymous"></script>
     <link
         href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
         rel="stylesheet">
@@ -43,15 +46,15 @@
                 <div></div>
             </section>
 
-            <footer>
+            <footer class="footer">
                 <div>
-                    <img src="" alt="">
+                    <img class="open-modal" src="https://i.ibb.co/tKWqw8J/spiderman.png" alt="Spiderman">
                 </div>
                 <div>
-                    <img src="" alt="">
+                    <img class="open-modal" src="https://i.ibb.co/Xzsdvgg/robin.png" alt="robin">
                 </div>
                 <div>
-                    <img src="" alt="">
+                    <img class="open-modal" src="https://i.ibb.co/M18p91c/batman.webp" alt="batman">
                 </div>
             </footer>
         </section>
@@ -63,8 +66,35 @@
         </section>
 
         <!-- Modal -->
-        <section></section>
+        <dialog id="myDialog">
+            <form method="dialog">
+                <section class="modal__content">
+                    <div class="modal__content--slider">
+                        <input type="radio" name="slider-1" id="radio-1" checked>
+                        <input type="radio" name="slider-1" id="radio-2">
+                        <input type="radio" name="slider-1" id="radio-3">
+
+                        <div class="cards">
+                            <label for="radio-1" id="card-1" class="card">
+                                <img src="https://static.platzi.com/media/public/uploads/spider-man_db8af43d-b692-4986-a385-e645d286e142.png" alt="spider-man 1">
+                            </label>
+                            <label for="radio-2" id="card-2" class="card">
+                                <img src="https://static.platzi.com/media/public/uploads/spider-man-2_b24c96b3-6d59-496f-815d-32b25eba0141.png" alt="spider-man 2">
+                            </label>
+                            <label for="radio-3" id="card-3" class="card">
+                                <img src="https://static.platzi.com/media/public/uploads/spider-man-3_19f5c510-8059-4477-abf8-42249a5445b7.png" alt="spider-man 3">
+                            </label>
+                        </div>
+                    </div>
+                    <button class="modal__select-button">Lo quiero</button>
+                    <button class="modal__content-close-icon">
+                        <i class="fa-solid fa-x"></i>
+                    </button>
+                </section>
+            </form>
+        </dialog>
     </div>
+    <script src="./index.js"></script>
 </body>
 
 </html>

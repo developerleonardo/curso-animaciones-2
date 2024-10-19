@@ -145,7 +145,47 @@ body {
     grid-column: 4 / 7;
     grid-row: 1 / 2;
 }
-
+.footer {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-end;
+    background: var(--yellow);
+    border-radius: 0 80px 0 0;
+    transform: translateY(100%);
+    animation-name: footer;
+    animation-duration: 0.5s;
+    animation-delay: 2.5s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+}
+@keyframes footer {
+    0% {
+        transform: translateY(100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+.footer div {
+    background: var(--blue);
+    width: 130px;
+    height: 50%;
+    border-radius: 20px 20px 0 0;
+    display: flex;
+    justify-content: center;
+}
+.footer div:hover img {
+    cursor: pointer;
+    transform: translateY(-20px) scale(1.1);
+    transition: transform 0.3s ease-in-out;
+}
+.footer div img {
+    width: 160px;
+    position: absolute;
+    bottom: 30px;
+    transform: translateY(20px) scale(1);
+    transition: transform 0.5s ease-in-out;
+}
 .loader {
     width: 100%;
     height: 100%;
@@ -199,4 +239,101 @@ body {
     100% {
         transform: scale(1);
     }
+}
+dialog {
+    z-index: 2;
+    width: 40%;
+    height: 50%;
+    border-radius: 10px;
+    border: none;
+}
+
+dialog form {
+    background: white;
+    width: 100%;
+    height: 100%;
+}
+
+dialog::backdrop {
+    background: rgba(0, 0, 0, 0.5);
+}
+.modal__content {
+    display: grid;
+    place-items: center;
+    width: 100%;
+    height: 100%;
+}
+.modal__content-close-icon {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: none;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.modal__content--slider {
+    width: 300px;
+    height: 200px;
+    transform-style: preserve-3d;
+}
+.cards {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.card {
+    background: var(--yellow);
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    transition: transform 0.5s ease;
+    cursor: pointer;
+    display: grid;
+    place-items: center;
+    width: 50%;
+    height: 100%;
+}
+.modal__select-button {
+    background: var(--red);
+    width: 200px;
+    color: white;
+    border: none;
+    padding: 16px 8px;
+    cursor: pointer;
+    font-size: 16px;
+}
+#radio-1, #radio-2, #radio-3 {
+    visibility: hidden;
+}
+#radio-1:checked ~ .cards #card-1,
+#radio-2:checked ~ .cards #card-2,
+#radio-3:checked ~ .cards #card-3 {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+    z-index: 1;
+}
+
+#radio-1:checked ~ .cards #card-2,
+#radio-2:checked ~ .cards #card-3,
+#radio-3:checked ~ .cards #card-1 {
+    transform: translateX(40%) scale(0.8);
+    opacity: 0.5;
+    z-index: 0;
+}
+
+#radio-1:checked ~ .cards #card-3,
+#radio-2:checked ~ .cards #card-1,
+#radio-3:checked ~ .cards #card-2 {
+    transform: translateX(-40%) scale(0.8);
+    opacity: 0.5;
+    z-index: 0;
+}
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
 }
